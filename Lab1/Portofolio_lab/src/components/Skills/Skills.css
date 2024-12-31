@@ -1,0 +1,95 @@
+.sk {
+  min-height: auto;
+  padding-bottom: 3rem;
+}
+.sk .sk-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.sk-row .sk-column {
+  flex: 1 1 40rem;
+}
+
+.sk-column .title1 {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+}
+.s-b .sk-content {
+  position: relative;
+  border: 0.3rem solid black;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.5rem;
+  margin: 2rem 2rem;
+}
+.sk-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.sk-content .prog {
+  padding: 1rem 0.5rem;
+}
+
+.sk-content .prog h3 {
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sk-content .prog .Bar {
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--grey);
+  padding: 0.3rem;
+  margin: 1rem 0;
+}
+.sk-content .prog .Bar span {
+  display: block;
+  height: 100%;
+  border-radius: 0.3rem;
+  background: var(--logoColor);
+}
+.sk-column:nth-child(1) .sk-content .prog:nth-child(1) .Bar span {
+  width: 95%;
+}
+.sk-column:nth-child(1) .sk-content .prog:nth-child(2) .Bar span {
+  width: 85%;
+}
+.sk-column:nth-child(1) .sk-content .prog:nth-child(3) .Bar span {
+  width: 90%;
+}
+.sk-column:nth-child(1) .sk-content .prog:nth-child(4) .Bar span {
+  width: 75%;
+}
+.sk-column:nth-child(1) .sk-content .prog:nth-child(5) .Bar span {
+  width: 70%;
+}
+.sk-column:nth-child(1) .sk-content .prog:nth-child(6) .Bar span {
+  width: 70%;
+}
+
+.box_title {
+  margin-left: 2rem;
+}
+.sk-column:nth-child(2) .sk-content .prog:nth-child(1) .Bar span {
+  width: 90%;
+}
+.sk-column:nth-child(2) .sk-content .prog:nth-child(2) .Bar span {
+  width: 85%;
+}
+.sk-column:nth-child(2) .sk-content .prog:nth-child(3) .Bar span {
+  width: 80%;
+}
+.sk-column:nth-child(2) .sk-content .prog:nth-child(4) .Bar span {
+  width: 80%;
+}
+
+.sk-column:nth-child(2) .sk-content .prog:nth-child(5) .Bar span {
+  width: 80%;
+}
+
+.secondTable {
+  height: 900px;
+}

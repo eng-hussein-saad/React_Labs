@@ -1,0 +1,75 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(../../../public/images/2.jpg) no-repeat;
+  background-size: 155%;
+  background-position: 5% 18%;
+}
+
+.main h2 {
+  color: var(--white);
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.main h2 span {
+  color: var(--blue);
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.main h3 {
+  color: var(--white);
+  font-size: 2em;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.main-btn {
+  color: var(--white);
+  background-color: var(--blue);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block; /* because anchor is an inline element 
+  and i want to give it padding and margin */
+  padding: 0.9375em;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  transition: 0.5s ease;
+}
+.secondry-btn {
+  color: var(--white);
+  background-color: var(--logoColor);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block; /* because anchor is an inline element 
+  and i want to give it padding and margin */
+  padding: 0.9375em;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  margin-left: 1.5em;
+  transition: 0.5s ease;
+}
+
+.secondry-btn:hover {
+  background-color: var(--darkBlue);
+  transform: scale(1.2);
+}
+
+.main-btn:hover {
+  background-color: var(--darkBlue);
+  transform: scale(1.2);
+}
+
+.social-icons a {
+  color: var(--white);
+  font-size: 1.7em;
+  padding-right: 30px;
+}

@@ -1,0 +1,49 @@
+header {
+  background-color: var(--grey);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--logoColor);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+  transition: 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+.navigation a {
+  color: var(--logoColor);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 30px;
+  transition: all cubic-bezier(0, 0, 0.05, 1);
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  height: 0.1rem;
+  width: 0;
+  left: 1.5em;
+  bottom: 0;
+  background-color: var(--logoColor);
+  transition: 0.7s;
+}
+
+.navigation a:hover::after {
+  width: 80%;
+}
