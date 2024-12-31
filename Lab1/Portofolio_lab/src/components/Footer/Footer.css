@@ -1,0 +1,21 @@
+.footer {
+  background-color: var(--sectionBG);
+  color: var(--white);
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-title {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.footer-title span {
+  color: var(--logoColor);
+}
+
+.footer a {
+  font-size: 1.3em;
+  padding: 0 1.3em;
+}
