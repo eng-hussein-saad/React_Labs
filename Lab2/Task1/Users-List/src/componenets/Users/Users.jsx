@@ -5,18 +5,21 @@ import UserCard from "./UserCard";
 export default function Users() {
   const [users, setUsers] = useState(usersData);
   const [mail, setMail] = useState();
+  const [visibility, setVisibility] = useState(false);
   function Search(email) {
     setUsers(
       users.filter((user) => {
         return user.email == email;
       })
     );
+    setVisibility(true);
   }
   function Reset() {
     setUsers(usersData);
+    setVisibility(false);
   }
   return (
-    <div className="container row row-cols-1 row-cols-md-3 g-4">
+    <div className="container row row-cols-1 row-cols-md-3 g-4 mx-auto my-1">
       <div className="input-group flex-nowrap">
         <span className="input-group-text" id="addon-wrapping">
           @
@@ -40,15 +43,17 @@ export default function Users() {
         >
           Search
         </button>
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={() => {
-            Reset();
-          }}
-        >
-          Reset
-        </button>
+        {visibility ? (
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => {
+              Reset();
+            }}
+          >
+            Reset
+          </button>
+        ) : null}
       </div>
       {users.map((user) => (
         <div className="col" key={user.id}>
