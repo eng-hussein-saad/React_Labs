@@ -2,7 +2,7 @@ import { useState } from "react";
 import ToDoForm from "../ToDoForm/ToDoForm";
 import TodoList from "../ToDoList/ToDoList";
 function ToDoWrapper() {
-  const [task, setTask] = useState();
+  const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
   function handleClick(title) {
     console.log(`title = ${title}`);
@@ -33,10 +33,7 @@ function ToDoWrapper() {
         handleChange={handleChange}
         task={task}
       />
-      <TodoList
-        taskList={taskList}
-        handleRemove={handleRemove}
-      />
+      <TodoList taskList={taskList} handleRemove={handleRemove} />
     </>
   );
 }

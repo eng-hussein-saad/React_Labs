@@ -1,0 +1,11 @@
+div.container.search {
+  background-color: #f3f1f2 !important;
+}
+
+.card.movie {
+  transition: 0.7s ease;
+}
+
+.card.movie:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,21 @@
+.page-link {
+  font-size: 35px; /* Adjust the font size as needed */
+  margin: 10px;
+  color: rgb(0, 0, 0) !important;
+}
+.page-link:hover {
+  color: rgb(250, 213, 28) !important;
+}
+
+.active > .page-link {
+  background-color: rgb(255, 229, 98) !important;
+  border-color: black !important;
+}
+
+.active > .page-link:hover {
+  background-color: rgb(100, 84, 3) !important;
+  border-color: black !important;
+}
+.card-img-top{
+  max-width: 200[];
+}
