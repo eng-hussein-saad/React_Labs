@@ -26,7 +26,6 @@ function MovieCard(props) {
         <button
           className="btn btn-primary mx-3"
           onClick={() => {
-            alert(`Added ${movie.title} to watchList`);
             handleAddWatchList(movie);
           }}
         >

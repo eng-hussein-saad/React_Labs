@@ -9,9 +9,18 @@ import NotFound from "./pages/NotFound";
 function App() {
   const [watchList, setWatchList] = useState([]);
 
-  function handleAddWatchList(movieId) {
-    setWatchList([...watchList, movieId]);
-    console.log(watchList);
+  function handleAddWatchList(data) {
+    let flag;
+    watchList?.map((movie) => {
+      if (movie.id == data.id) {
+        alert(`${movie.title} already exist in watchlist.`);
+        flag = true;
+      }
+    });
+    if (!flag) {
+      setWatchList([...watchList, data]);
+      alert(`${data.title} successfuly added to watchlist.`);
+    }
   }
 
   function handleRemoveWatchList(movieId) {
