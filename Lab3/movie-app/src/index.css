@@ -1,0 +1,9 @@
+i.favourites {
+  transition: 0.7s ease;
+  margin-left: 20px;
+}
+
+i.favourites:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

@@ -2,8 +2,10 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router";
-function Header(props) {
-  const { watchList } = props;
+import { useDispatch, useSelector } from "react-redux";
+function Header() {
+  const watchListData = useSelector((state) => state.watchList.value);
+  const dispatch = useDispatch();
   return (
     <nav className="navbar bg-body-tertiary">
       <div className="container-fluid">
@@ -12,7 +14,9 @@ function Header(props) {
         </Link>
         <Link to="/Watchlist" className="navbar-brand mx-5">
           Watchlist{" "}
-          <span className="badge text-bg-secondary">{watchList.length}</span>
+          <span className="badge text-bg-secondary">
+            {watchListData.length}
+          </span>
         </Link>
       </div>
     </nav>

@@ -10,7 +10,7 @@ function Pagination(props) {
       </div>
     );
   }
-
+  //view first page, previous page, current page, next page and last page
   function getPageNumbers() {
     const pageList = [];
     pageList.push(firstPage);

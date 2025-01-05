@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromWatchList } from "../../store/slices/watchlist";
 function WatchlistCard(props) {
-  const { movie, handleRedirectView, handleRemoveWatchList } = props;
+  const dispatch = useDispatch();
+  const watchListData = useSelector((state) => state.watchList.value);
+  const { handleRedirectView, movie } = props;
+
   return (
     <div className="card movie">
       <img
@@ -11,27 +16,37 @@ function WatchlistCard(props) {
       <div className="card-body">
         <h5 className="card-title">{movie.title}</h5>
         <p className="card-text">
-          {movie.overview.length > 100
-            ? `${movie.overview.substring(0, 100)}...`
+          {movie.overview.length > 50
+            ? `${movie.overview.substring(0, 50)}...`
             : movie.overview}
         </p>
-        <button
-          className="btn btn-warning"
-          onClick={() => {
-            handleRedirectView(movie.id);
-          }}
-        >
-          Details
-        </button>
-        <button
-          className="btn btn-primary mx-3"
-          onClick={() => {
-            alert(`Removed ${movie.title} from watchList`);
-            handleRemoveWatchList(movie.id);
-          }}
-        >
-          Remove
-        </button>
+        <div className="d-flex align-items-center">
+          <button
+            className="btn btn-warning me-2"
+            onClick={() => {
+              handleRedirectView(movie.id);
+            }}
+          >
+            Details
+          </button>
+          <span>
+            {watchListData.find((item) => item.id === movie.id) ? (
+              <i
+                className="fa-solid fa-heart fa-3x favourites"
+                style={{ color: "#FFD43B" }}
+                onClick={() => dispatch(removeFromWatchList(movie))}
+              ></i>
+            ) : (
+              <i
+                className="fa-regular fa-heart fa-3x favourites"
+                onClick={() => {
+                  dispatch(addToWatchList(movie));
+                }}
+                style={{ color: "#FFD43B" }}
+              ></i>
+            )}
+          </span>
+        </div>
       </div>
     </div>
   );

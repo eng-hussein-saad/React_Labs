@@ -93,6 +93,7 @@ function Movies(props) {
 
   //fetch movies and fires each time we change page.
   //first time it will go in the else to get all movies,
+  //searching.
   useEffect(() => {
     if (search) {
       axiosInstance
@@ -122,8 +123,6 @@ function Movies(props) {
         .catch((err) => console.log(err));
     }
   }, [page]);
-
-  //searching.
 
   return (
     <>
@@ -158,14 +157,10 @@ function Movies(props) {
         </div>
       </div>
       <h3 className="my-4">Popular Movies</h3>
-      <div className="row row-cols-1 row-cols-md-5 g-4">
+      <div className="row row-cols-1 row-cols-md-4 g-4 ">
         {movies?.map((movie) => (
           <div className="col" key={movie.id}>
-            <MovieCard
-              movie={movie}
-              handleRedirectView={handleRedirectView}
-              handleAddWatchList={handleAddWatchList}
-            />
+            <MovieCard movie={movie} handleRedirectView={handleRedirectView} />
           </div>
         ))}
       </div>
