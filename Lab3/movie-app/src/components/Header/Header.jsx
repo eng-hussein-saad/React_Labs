@@ -12,12 +12,17 @@ function Header() {
         <Link to="/" className="navbar-brand mx-5 fw-bold">
           Movie App
         </Link>
-        <Link to="/Watchlist" className="navbar-brand mx-5">
-          Watchlist{" "}
-          <span className="badge text-bg-secondary">
-            {watchListData.length}
-          </span>
-        </Link>
+        <div className="d-flex ms-auto">
+          <Link to="/Register" className="navbar-brand mx-5">
+            Register
+          </Link>
+          <Link to="/Watchlist" className="navbar-brand mx-5">
+            Watchlist{" "}
+            <span className="badge text-bg-secondary">
+              {watchListData.length}
+            </span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
