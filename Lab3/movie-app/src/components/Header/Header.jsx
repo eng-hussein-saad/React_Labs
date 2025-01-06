@@ -10,10 +10,15 @@ function Header(props) {
         <Link to="/" className="navbar-brand mx-5 fw-bold">
           Movie App
         </Link>
-        <Link to="/Watchlist" className="navbar-brand mx-5">
-          Watchlist{" "}
-          <span className="badge text-bg-secondary">{watchList.length}</span>
-        </Link>
+        <div className="d-flex ms-auto">
+          <Link to="/Register" className="navbar-brand mx-5">
+            Register
+          </Link>
+          <Link to="/Watchlist" className="navbar-brand mx-5">
+            Watchlist{" "}
+            <span className="badge text-bg-secondary">{watchList.length}</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );

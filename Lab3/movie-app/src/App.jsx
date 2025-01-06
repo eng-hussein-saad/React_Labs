@@ -6,6 +6,7 @@ import MovieDetails from "./components/MovieDetails/MovieDetails";
 import { useState } from "react";
 import WatchList from "./pages/Watchlist";
 import NotFound from "./pages/NotFound";
+import Register from "./pages/Register"
 function App() {
   const [watchList, setWatchList] = useState([]);
 
@@ -50,6 +51,7 @@ function App() {
                 />
               }
             />
+            <Route path="/Register" element={<Register />} />
             <Route path="/MovieDetails/:id" element={<MovieDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
