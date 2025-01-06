@@ -14,19 +14,7 @@ function Register() {
     passwordError: null,
     confirmPasswordError: null,
   });
-  function checkUserEmail(v) {
-    return v.match(/[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/);
-  }
 
-  function checkWhiteSpace(v) {
-    return v.match(/\s+/);
-  }
-
-  function checkPassword(v) {
-    return v.match(
-      /^(?=(.*[a-z]))(?=(.*[A-Z]))(?=(.*\d))(?=(.*[@%$#]))[A-Za-z\d@%$#]{8,}$/
-    );
-  }
   function handleSubmit(e) {
     e.preventDefault();
     //check if any value in the formErrors doesn't have a null value then print error.
