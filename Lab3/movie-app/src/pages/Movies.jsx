@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import "../components/Movies/Movies.css";
 import MovieCard from "../components/MovieCard/MovieCard";
 import axiosInstance from "../apis/config";
 import Pagination from "../components/pagination/Pagination";
 import { useNavigate } from "react-router";
-
+import LanguageContext from "../context/language";
 function Movies(props) {
+  const { lang, setLang } = useContext(LanguageContext);
   const navigate = useNavigate();
   const { handleAddWatchList } = props;
   const [movies, setMovies] = useState(null);
@@ -30,6 +31,7 @@ function Movies(props) {
     axiosInstance
       .get("/movie/popular", {
         params: {
+          language: lang,
           order: "desc",
           sortBy: "popularity",
         },
@@ -53,6 +55,7 @@ function Movies(props) {
     axiosInstance
       .get("/search/movie", {
         params: {
+          language: lang,
           query: search,
         },
       })
@@ -74,11 +77,11 @@ function Movies(props) {
 
   //get first and last page when rendering first time used for pagination.
   useEffect(() => {
+    console.log(lang);
     axiosInstance
       .get("/movie/popular", {
         params: {
-          order: "desc",
-          sortBy: "popularity",
+          language: lang,
         },
       })
       .then((res) => {
@@ -99,6 +102,7 @@ function Movies(props) {
       axiosInstance
         .get("/search/movie", {
           params: {
+            language: lang,
             query: search,
             page: page,
           },
@@ -112,6 +116,7 @@ function Movies(props) {
       axiosInstance
         .get("/movie/popular", {
           params: {
+            language: lang,
             page: page,
             order: "desc",
             sortBy: "popularity",
@@ -122,7 +127,7 @@ function Movies(props) {
         })
         .catch((err) => console.log(err));
     }
-  }, [page]);
+  }, [page, lang]);
 
   return (
     <>
@@ -160,7 +165,11 @@ function Movies(props) {
       <div className="row row-cols-1 row-cols-md-4 g-4 ">
         {movies?.map((movie) => (
           <div className="col" key={movie.id}>
-            <MovieCard movie={movie} handleRedirectView={handleRedirectView} />
+            <MovieCard
+              movie={movie}
+              handleRedirectView={handleRedirectView}
+              lang={lang}
+            />
           </div>
         ))}
       </div>

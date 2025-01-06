@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
+import LanguageContext from "../../context/language";
+
 function Header() {
+  const { lang, setLang } = useContext(LanguageContext);
   const watchListData = useSelector((state) => state.watchList.value);
   const dispatch = useDispatch();
   return (
@@ -22,6 +25,40 @@ function Header() {
               {watchListData.length}
             </span>
           </Link>
+          <div className="dropdown">
+            <a
+              className="btn btn-secondary dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Language
+            </a>
+            <ul className="dropdown-menu">
+              <li>
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    setLang("en");
+                  }}
+                >
+                  English
+                </button>
+              </li>
+              <li>
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    setLang("ar");
+                    
+                  }}
+                >
+                  Arabic
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
